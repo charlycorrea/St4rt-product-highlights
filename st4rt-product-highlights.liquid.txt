@@ -17,7 +17,7 @@
     --st4rt-pd-cat-size-m: {{ section.settings.category_size_m }}px;
     --st4rt-pd-cat-size-d: {{ section.settings.category_size_d }}px;
     --st4rt-pd-title-weight: {{ section.settings.title_weight }};
-    --st4rt-pd-font-family: {{ section.settings.font_family }};
+    --st4rt-pd-font-family: {% if section.settings.font_family == "bebas" %}"Bebas Neue", system-ui, -apple-system, "Segoe UI", Roboto, Arial{% else %}system-ui, -apple-system, "Segoe UI", Roboto, Arial{% endif %};
     --st4rt-pd-card-radius: {{ section.settings.radius }}px;
     --st4rt-pd-gap: {{ section.settings.gap }}px;
   }
@@ -136,10 +136,10 @@
       "type": "select",
       "id": "font_family",
       "label": "Font family",
-      "default": "'Bebas Neue', system-ui, -apple-system, Segoe UI, Roboto, Arial",
+      "default": "bebas",
       "options": [
-        { "value": "'Bebas Neue', system-ui, -apple-system, Segoe UI, Roboto, Arial", "label": "Bebas Neue" },
-        { "value": "system-ui, -apple-system, Segoe UI, Roboto, Arial", "label": "System" }
+        { "value": "bebas", "label": "Bebas Neue" },
+        { "value": "system", "label": "System" }
       ]
     },
 
